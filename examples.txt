@@ -1,0 +1,81 @@
+Create a task called Finish assignment, assign it to Manit, set priority to high, and set the due date to 2026-10-20.
+
+Create a task called Finish assignment.
+
+{
+  "type": "object",
+  "properties": {
+    "task_name": {"type": "string"},
+    "assigned_to": {"type": "string"},
+    "priority": {"type": "string", "enum": ["low", "medium", "high"]},
+    "due_date": {"type": "string"}
+  },
+  "required": ["task_name", "assigned_to", "priority", "due_date"]
+}
+
+
+Send an email to Rahul at rahul@awd.example.com about tomorrow's meeting. Keep it professional.
+
+Send an email to Rahul about tomorrow's meeting. Write a professional email confirming the meeting.
+
+{
+  "type": "object",
+  "properties": {
+    "recipient": {"type": "string"},
+    "subject": {"type": "string"},
+    "body": {"type": "string"},
+    "tone": {"type": "string"}
+  },
+  "required": ["recipient", "subject", "body", "tone"]
+}
+
+
+Insert a user named Priya with email priya@awd.example.com into the users table.
+
+Insert a user named Priya with email priya@awd.example.com.
+
+
+{
+  "type": "object",
+  "properties": {
+    "operation": {"type": "string", "enum": ["insert", "update", "delete"]},
+    "table": {"type": "string"},
+    "data": {"type": "object"},
+    "conditions": {"type": "object"}
+  },
+  "required": ["operation", "table", "data", "conditions"]
+}
+
+{
+  "type": "object",
+  "properties": {
+    "operation": {
+      "type": "string",
+      "enum": ["insert", "update", "delete"]
+    },
+    "table": {"type": "string"},
+    "data": {
+      "type": "object",
+      "properties": {
+        "name": {"type": "string"},
+        "email": {"type": "string"}
+      },
+      "required": ["name", "email"]
+    },
+    "conditions": {"type": "object"}
+  },
+  "required": ["operation", "table", "data", "conditions"]
+}
+
+Create an event called Team Meeting on 2026-10-22 from 14:00 to 15:00.
+
+{
+  "type": "object",
+  "properties": {
+    "event_name": {"type": "string"},
+    "date": {"type": "string"},
+    "start_time": {"type": "string"},
+    "end_time": {"type": "string"}
+  },
+  "required": ["event_name", "date", "start_time", "end_time"]
+}

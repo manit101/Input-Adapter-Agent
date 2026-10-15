@@ -1,0 +1,4 @@
+jsonschema
+python-dotenv
+google-genai
+pytest
